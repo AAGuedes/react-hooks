@@ -2,15 +2,32 @@ import { useCounter } from '../hooks/useCounter';
 
 export const CounterWitchCustomHook = () => {
 
-    const { counter } = useCounter();
+    const { counter, increment, decrement, reset } = useCounter();
 
     return (
         <>
             <h1>Counter with Hook: {counter}</h1>
             <hr />
-            <button className="btn btn-primary me-1">+1</button>
-            <button className="btn btn-primary me-1">Reset</button>
-            <button className="btn btn-primary">-1</button>
+            <button
+                className="btn btn-primary me-1"
+                onClick={() => increment()}
+            >
+                +1
+            </button>
+
+            <button
+                className="btn btn-primary me-1"
+                onClick={reset}
+            >
+                Reset
+            </button>
+
+            <button
+                className="btn btn-primary"
+                onClick={() => decrement()}
+            >
+                -1
+            </button>
         </>
     )
 }
