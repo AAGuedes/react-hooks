@@ -6,6 +6,7 @@ import { CounterApp } from './01-useState/CounterApp';
 import { CounterWitchCustomHook } from './01-useState/CounterWitchCustomHook';
 import { SimpleForm } from './02-useEffect/SimpleForm';
 import { FormWithCustomHook } from './02-useEffect/FormWithCustomHook';
+import { MultipleCustomHooks } from './03-examples/MultipleCustomHooks';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <CounterApp /> */}
     {/* <CounterWitchCustomHook /> */}
     {/* <SimpleForm /> */}
-    <FormWithCustomHook />
+    {/* <FormWithCustomHook /> */}
+    <MultipleCustomHooks />
   </React.StrictMode>,
 )
