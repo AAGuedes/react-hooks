@@ -1,12 +1,19 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 export const Message = () => {
 
+    const [coods, setCoods] = useState({ x: 0, y: 0 });
+
     useEffect(() => {
-        console.log('Message mounted');
+
+        const onMouseMove = ({ x, y }) => {
+            setCoods({ x, y });
+        }
+
+        window.addEventListener('mousemove', onMouseMove);
 
         return () => {
-            console.log('Message unmounted');
+            window.removeEventListener('mousemove', onMouseMove);
         }
     }, [])
 
@@ -14,6 +21,7 @@ export const Message = () => {
     return (
         <>
             <h3>El usuario ya existe.</h3>
+            {JSON.stringify(coods)}
         </>
     )
 }
